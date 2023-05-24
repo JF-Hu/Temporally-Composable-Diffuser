@@ -1,0 +1,58 @@
+Traceback (most recent call last):
+  File "/home/hujifeng/anaconda3/envs/diffusion_env/lib/python3.8/site-packages/ml_logger/__init__.py", line 203, in thunk
+    results = fn(*(args or ARGS), **_KWARGS)
+  File "/home/hujifeng/workspace/TemporallyComposableDiffuser/scripts/train.py", line 32, in main
+    dataset_config = utils.Config(
+  File "/home/hujifeng/workspace/TemporallyComposableDiffuser/diffuser/utils/config.py", line 38, in __init__
+    os.mkdir(father_save_path)
+FileNotFoundError: [Errno 2] No such file or directory: 'analysis/code/model_data/walker2d_e_HC_5_FAR_unify_range_RTG_multi_checkpoints_RT18/'
+Traceback (most recent call last):
+  File "/home/hujifeng/anaconda3/envs/diffusion_env/lib/python3.8/site-packages/ml_logger/__init__.py", line 203, in thunk
+    results = fn(*(args or ARGS), **_KWARGS)
+  File "/home/hujifeng/workspace/TemporallyComposableDiffuser/scripts/train.py", line 323, in main
+    model = model_config()
+  File "/home/hujifeng/workspace/TemporallyComposableDiffuser/diffuser/utils/config.py", line 71, in __call__
+    instance = self._class(*args, **kwargs, **self._dict)
+  File "/home/hujifeng/workspace/TemporallyComposableDiffuser/diffuser/models/transformer.py", line 255, in __init__
+    raise Exception("self.return_type is wrong !!!")
+Exception: self.return_type is wrong !!!
+Traceback (most recent call last):
+  File "/home/hujifeng/anaconda3/envs/diffusion_env/lib/python3.8/site-packages/ml_logger/__init__.py", line 203, in thunk
+    results = fn(*(args or ARGS), **_KWARGS)
+  File "/home/hujifeng/workspace/TemporallyComposableDiffuser/scripts/train.py", line 336, in main
+    batch = utils.batchify(dataset[0], Config.device)
+  File "/home/hujifeng/workspace/TemporallyComposableDiffuser/diffuser/datasets/sequence.py", line 376, in __getitem__
+    batch = DistQvalueReturnToGoBatch(trajectories, conditions, returns, dones, rewards[:end-start])
+TypeError: __new__() missing 1 required positional argument: 'next_obs'
+Traceback (most recent call last):
+  File "/home/hujifeng/anaconda3/envs/diffusion_env/lib/python3.8/site-packages/ml_logger/__init__.py", line 203, in thunk
+    results = fn(*(args or ARGS), **_KWARGS)
+  File "/home/hujifeng/workspace/TemporallyComposableDiffuser/scripts/train.py", line 344, in main
+    loss, infos = diffusion.loss(x=batch.trajectories, cond=batch.conditions, returns=batch.returns_timesteps)
+  File "/home/hujifeng/workspace/TemporallyComposableDiffuser/diffuser/models/diffusion.py", line 621, in loss
+    diffuse_loss, info = self.p_losses(x[:, :, self.action_dim:], cond, t, returns, goals)
+  File "/home/hujifeng/workspace/TemporallyComposableDiffuser/diffuser/models/diffusion.py", line 586, in p_losses
+    x_recon = self.model(x_noisy, cond, t, returns, goals=goals)
+  File "/home/hujifeng/anaconda3/envs/diffusion_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/hujifeng/workspace/TemporallyComposableDiffuser/diffuser/models/temporal.py", line 264, in forward
+    x = resnet(x, t)
+  File "/home/hujifeng/anaconda3/envs/diffusion_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/hujifeng/workspace/TemporallyComposableDiffuser/diffuser/models/temporal.py", line 102, in forward
+    out = self.blocks[0](x) + self.time_mlp(t)
+  File "/home/hujifeng/anaconda3/envs/diffusion_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/hujifeng/workspace/TemporallyComposableDiffuser/diffuser/models/helpers.py", line 68, in forward
+    return self.block(x)
+  File "/home/hujifeng/anaconda3/envs/diffusion_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/hujifeng/anaconda3/envs/diffusion_env/lib/python3.8/site-packages/torch/nn/modules/container.py", line 139, in forward
+    input = module(input)
+  File "/home/hujifeng/anaconda3/envs/diffusion_env/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/hujifeng/anaconda3/envs/diffusion_env/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 307, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/hujifeng/anaconda3/envs/diffusion_env/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 303, in _conv_forward
+    return F.conv1d(input, weight, bias, self.stride,
+RuntimeError: Given groups=1, weight of size [128, 17, 5], expected input[1, 18, 100] to have 17 channels, but got 18 channels instead
