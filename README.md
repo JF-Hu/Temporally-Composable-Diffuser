@@ -41,4 +41,4 @@ If the hyperparameter configuration is inappropriate, please check the error inf
 
 # Acknowledgements
 
-The codebase is derived from [diffuser repo](https://github.com/jannerm/diffuser/) and [decision diffuser](https://github.com/anuragajay/decision-diffuser).
+The codebase is derived from [diffuser](https://github.com/jannerm/diffuser/) and [decision diffuser](https://github.com/anuragajay/decision-diffuser).
